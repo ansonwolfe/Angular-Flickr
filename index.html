@@ -1,0 +1,50 @@
+<!-- Learning Angular.js with Ari Lerner at Google  -->
+<!-- Feb. 18, 2014 -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Postly clone</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<style type="text/css" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"></style>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+</head>
+<body ng-app="myApp">
+	<div class="container" ng-controller="HomeController">
+		<h2>{{user.name}}</h2>
+		<div ng-view=''>
+			<!-- where new view shows up -->
+		</div>
+
+
+		<ul>
+			<li ng-repeat="photo in photos">
+				<img ng-src="{{getPhotoUrl(photo)}}" />
+			</li>
+		</ul>
+
+
+		
+	<pre>{{photos | json }}</pre> <!-- good practice to put in 
+ -->
+	</div>
+	<!-- directives are just functions that run on a DOM element
+
+		i.e. function say(msg){
+				alert("HI" + msg);
+			} 
+
+			<div say="world"></div> 
+	-->
+
+
+
+	
+
+
+</body>
+</html>

@@ -7,6 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Postly clone</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
 	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
 	<script type="text/javascript" src="app.js"></script>
@@ -15,17 +16,20 @@
 </head>
 <body ng-app="myApp">
 	<div class="container" ng-controller="HomeController">
-		<h2>{{user.name}}</h2>
+		<!-- <h2>Hello {{user.name}}</h2> -->
 		<div ng-view=''>
 			<!-- where new view shows up -->
 		</div>
 
 
-		<ul>
-			<li ng-repeat="photo in photos">
-				<img ng-src="{{getPhotoUrl(photo)}}" />
-			</li>
-		</ul>
+<!-- 		<ul> -->
+			<div id="columns" ng-repeat="photo in photos">
+				<figure>
+					<img class="pin-article" ng-src="{{getPhotoUrl(photo)}}" />
+					<figcaption>File title: {{photo.title}}</figcaption>
+				</figure>
+			</div>
+<!-- 		</ul> -->
 
 
 		

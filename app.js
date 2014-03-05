@@ -45,7 +45,7 @@ angular.module('myApp',['ngRoute'])
 // controller and constructor function
 .controller("HomeController", function($scope, $http, Flickr){
 	$scope.user = {
-		name: 'Ari'
+		name: 'Bon'
 	};
 
 	$scope.getPhotoUrl = function(photo) {
